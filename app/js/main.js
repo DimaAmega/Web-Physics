@@ -1,6 +1,6 @@
-////////////////////////////*
+///////////////////////////
 //    GLOBAL VARIABLES
-////////////////////////////*
+///////////////////////////
 var windowHeight = document.documentElement.clientHeight;
 var windowWidth = document.documentElement.clientWidth;
 document.getElementById('stage').style.height = windowHeight + 'px';
