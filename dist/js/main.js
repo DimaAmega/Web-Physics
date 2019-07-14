@@ -49,15 +49,14 @@ var g = PIXI.Graphics;
 // 	bact.anchor.set(0.5,0.5);
 
 
-var g = new PIXI.Graphics();
-g.beginFill(0xFF3300);
-g.x = document.documentElement.clientWidth/2;
-g.y = document.documentElement.clientHeight/2;
+// var g = new PIXI.Graphics();
+// g.beginFill(0xFF3300);
+// g.x = document.documentElement.clientWidth/2;
+// g.y = document.documentElement.clientHeight/2;
 
-var c1 = g.drawCircle(0,0,100)
-app.stage.addChild(c1);
-
-var y = Zele(c1,1.1);
+// var c1 = g.drawCircle(0,0,100)
+// app.stage.addChild(c1);
+// var y = Zele(c1,1.1);
 
 
 
