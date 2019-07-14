@@ -1,6 +1,7 @@
 ///////////////////////////
 //    GLOBAL VARIABLES
 ///////////////////////////
+PIXI.utils.skipHello();
 var windowHeight = document.documentElement.clientHeight;
 var windowWidth = document.documentElement.clientWidth;
 document.getElementById('stage').style.height = windowHeight + 'px';
@@ -16,13 +17,10 @@ var createApp = function(parentId){
 	var app = new PIXI.Application({
 		backgroundColor: 0x1099bb,
 		width: parent.offsetWidth,
-		height: parent.offsetHeight}); 
-
+		height: parent.offsetHeight});
 	 parent.appendChild(app.view);
 	 return app;
 };
-
-
 function Zele(obj,t){
 	var i = -Math.PI/2;
 	var y = app.ticker.add((deltaTime) => {
@@ -33,30 +31,36 @@ function Zele(obj,t){
 	return y;
 };
 
-
 var app = createApp('stage');
 var ALL_SPRITES = { };
 var g = PIXI.Graphics;
 
-// PIXI.loader
-//   .add("images/bact.png")
-//   .load(setup);
+var g = new PIXI.Graphics();
+g.beginFill(0xFF3300);
+g.x = document.documentElement.clientWidth/2;
+g.y = document.documentElement.clientHeight/2;
 
-// function setup() {
-// 	var bact  = new PIXI.Sprite(PIXI.loader.resources["images/bact.png"].texture);
-// 	ALL_SPRITES.cat = bact;
-// 	bact.scale.set(0.7,0.7);
-// 	bact.anchor.set(0.5,0.5);
+var c1 = g.drawCircle(0,0,100)
+app.stage.addChild(c1);
+var y = Zele(c1,1.1);
+
+///////////////////////////////////////////////
+function Lim(x){
+	var N = Math.floor(x);
+	var sum = 0;
+	for( var n = 1; n<N; n++) sum+= 1/(n**2);
+	return sum;
+}
+
+const worker = new Worker('js/limitsToInf.js');
+worker.postMessage("var N = Math.floor(x); var sum = 0; for( var n = 1; n<N; n++) sum+= 1/(n**2); return sum;  ");
+worker.addEventListener('message',e=>{
+	console.log('ОТВЕТ!',e.data);
+	alert(e.data);
+	worker.terminate();
+},false);
 
 
-// var g = new PIXI.Graphics();
-// g.beginFill(0xFF3300);
-// g.x = document.documentElement.clientWidth/2;
-// g.y = document.documentElement.clientHeight/2;
-
-// var c1 = g.drawCircle(0,0,100)
-// app.stage.addChild(c1);
-// var y = Zele(c1,1.1);
 
 
 
