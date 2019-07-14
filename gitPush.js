@@ -20,6 +20,10 @@ function ShellConsole(str){
     });
 };
 
+/////////////////////////////////////////
+// ЗАЛИВАЕМ ФАЛЫЙ НА СЕРВЕРА ГИТ ХАБА
+/////////////////////////////////////////
+
 ShellConsole("git status")
 .then(function(res){
     console.log('КОМАНДА СТАТУСА ПРОШЛА');
@@ -35,7 +39,7 @@ return ShellConsole("git push origin master");
 },function(error){ console.log(error)})
 .then(function(res){
     console.log('ФАЙЛЫ НА СЕРВЕР УСПЕШНО ЗАЛИТЫ');
-},function(error){ console.log(error)})
+},function(error){ console.log(error)});
 
 
 
