@@ -22,19 +22,19 @@ function ShellConsole(str){
 
 ShellConsole("git status")
 .then(function(res){
-    console.log('CHECK');
+    console.log('КОМАНДА СТАТУСА ПРОШЛА');
 return ShellConsole("git add -A");
 },function(error){ console.log(error)})
 .then(function(res){
-    console.log('ДЕЛАЕМ КОММИТ');
+    console.log('ФАЙЛЫ УСПЕШНО ДОБАВЛЕНЫ');
 return ShellConsole(`git commit -m"${message}"`);
 },function(error){ console.log(error)})
 .then(function(res){
-    console.log('ЗАЛИВАЕМ НА СЕРВЕР');
+    console.log('КОММИТ СДЕЛАН');
 return ShellConsole("git push origin master");
 },function(error){ console.log(error)})
 .then(function(res){
-    console.log('ЗАКОНЧИЛИ');
+    console.log('ФАЙЛЫ НА СЕРВЕР УСПЕШНО ЗАЛИТЫ');
 },function(error){ console.log(error)})
 
 
