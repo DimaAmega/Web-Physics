@@ -38,15 +38,6 @@ var app = createApp('stage');
 var ALL_SPRITES = { };
 var g = PIXI.Graphics;
 
-// PIXI.loader
-//   .add("images/bact.png")
-//   .load(setup);
-
-// function setup() {
-// 	var bact  = new PIXI.Sprite(PIXI.loader.resources["images/bact.png"].texture);
-// 	ALL_SPRITES.cat = bact;
-// 	bact.scale.set(0.7,0.7);
-// 	bact.anchor.set(0.5,0.5);
 
 
 // var g = new PIXI.Graphics();
