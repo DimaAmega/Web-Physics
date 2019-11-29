@@ -1,6 +1,6 @@
 const child_process = require('child_process');
 var message = process.argv.slice(2,process.argv.length).join(' ');
-
+console.log(message)
 function ShellConsole(str){
     return new Promise(function(resolve, reject) {
         child_process.exec(str, function(error, stdout, stderr){

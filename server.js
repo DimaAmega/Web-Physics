@@ -24,14 +24,15 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }) );
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static(path.join(__dirname, 'Sceens')));
+app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.static(path.join(__dirname, 'Modules')));
+
+
 
 ///////////////////////////
 //    MY MIDDLEWARE
 ///////////////////////////
 app.use('/', IndexRouter);
-
-
 ///////////////////////////
 //    PAGE NOT FOUND 404
 ///////////////////////////
@@ -48,5 +49,5 @@ app.use(function(err, req, res, next) {
 ///////////////////////////
 //      START SERVER 
 ///////////////////////////
-var port = 8000;
+var port = 7000;
 app.listen(port,()=>{ console.log(`Listening on ${port} port`)});
